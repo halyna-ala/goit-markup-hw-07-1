@@ -305,41 +305,43 @@
         justify-content: center;
         background: $backgraund;
     
-    }
-    .footer-ul {
+}
+
+    .footer .address {
         margin: 20px 0 0;
       }
     
-    .footer .logo, 
-    .footer .item-s {
+     
+    .footer .address__links {
         color: $hero-100pr;
     }
     
-    .adres .item {
+    .address__link {
         color: $white-footer-60pr;
         @include transition(color);
     }
     
-    .adres .item:hover,
-    .adres .item:focus {
+    .footer__address:hover .address__link,
+    .footer__address:focus .address__link {
         color: $hero-100pr;
     }
-    .footer .contact {
+    .footer__address {
         display: block;
         flex-wrap: wrap;
         padding-left: 0;
         margin-top: 20px;
-    width: 231px;
+        width: 231px;
+        font-family: inherit;
         font-weight: normal; 
         font-size: 14px; 
         line-height: 1.71;
     }
-    .contact .links {
+    .address__item {
         display: inline-block;
         flex-wrap: wrap;
         margin-top: 9px;
     }
-    .footer .container {
+    .footer__container {
         padding-top: 60px;
         padding-bottom: 60px;
     }

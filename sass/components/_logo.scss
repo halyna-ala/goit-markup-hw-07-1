@@ -5,15 +5,16 @@
     line-height: 1.11;
     
     color: $logo-tekst; 
-    
-    &--top {
-        padding-top: 24px;
-        padding-bottom: 25px;
-    }
-    &__subtext {
-        color: $akcent-color;
-    }
-    }
+}
+
+.logo__subtext {
+    color: $akcent-color;
+}
+
+.logo--top {
+    padding-top: 24px;
+    padding-bottom: 25px;
+}
 
 .logo--bottom {
     color: $hero-100pr;

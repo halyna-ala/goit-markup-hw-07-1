@@ -10,11 +10,14 @@
 .header__nav {
     display: flex;
 }
+.nav {
+    display: flex;
+}
 .nav__site {
+    display: flex;
     justify-content: space-between;
     align-items: center;
     
-    display: flex;
     margin-left: 93px;
     margin-top: 0;
     margin-bottom: 0;
@@ -66,11 +69,11 @@
     opacity: 1;
 }
 
-.nav__site__carent {
+.nav__link--carent {
     color: $akcent-color;
 }
 
-.nav__site .carent::after {
+.nav__link--carent::after {
     opacity: 1;
 }
 

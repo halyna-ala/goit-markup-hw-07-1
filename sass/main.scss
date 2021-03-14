@@ -4,41 +4,10 @@
 @import './base/defaults';
 @import './components/logo';
 @import './components/page-header';
+@import './components/hero';
 
           
-    /* hero */
-    
-    .hero {
-        max-width: 1600px;
-        margin-right:auto;
-        margin-left: auto;
-        padding-top: 199px;
-        padding-bottom: 201px;
-        margin-top: 0px;
-        margin-bottom: 0px;
-        height: 600px;
-        text-align: center;
-        background-image: linear-gradient(to right,
-        $bg-hero-color, $bg-hero-color
-    ),
-    url(../images/hero.jpg);
-    background-size: cover;
-    background-position: center;
-    text-align: center; 
-    }
-    
-    .hero .hero-title {
-        margin-bottom: 40px;
-        margin-right:auto;
-        margin-left: auto;
-        color: $hero-100pr; 
-        font-weight: 900; 
-        font-size: 44px; 
-        line-height: 1.36; 
-        width: 696px;
-        letter-spacing: 0.06em;
-    }
-    
+ 
     /* section */
     .section {
         padding-top: 94px;
@@ -187,10 +156,10 @@
             
             .team__list .team__persons {
                 flex-basis: calc(100% / 4 - 30px);
-                margin-left: $card-grid;
+                margin-left: 30px;
             }
             .team__list {
-                margin-left: calc(-1 * $card-grid);
+                margin-left: calc(-1 * 30px);
                 display: flex;
                 flex-wrap: wrap;
         padding-left: 0;
@@ -231,18 +200,19 @@
         margin-left: 10px;
     }
     
-    .social__icons {
+    .social__icon {
         fill: $social-icons;
         @include transition(color);
 
     }
-    .social__item:hover .social__icons{
+    .social__icon:hover {
         fill: $hero-100pr;
     }
     
     .social__icons .social__item:hover,
     .social__icons .social__item:focus {
         background-color: $akcent-color;
+        
     }
     .social--dark {
         background-color: $white-text-color-1;
@@ -445,7 +415,7 @@
     .footer-form__button:hover {
         background-color: $modal-bg-btn 
     }
-    .footer-form__icon {
+    .footer-form__btn {
         @include vertically-centered;
     
     right: 28px;
@@ -453,36 +423,20 @@
     fill: $hero-100pr;
     }
     /* button */
-    .button {
-        border-radius: 4px;
-        padding: 10px 32px;
-        border: 1px solid transparent;
-    
-        color: $hero-100pr; 
-        background-color: $akcent-color; 
-        
-        font-family: inherit; 
-        font-weight: 700; 
-        font-size: 16px; 
-        line-height: 1.87; 
-        letter-spacing: 0.06em;
-        align-items: center;
-        cursor: pointer;
-    }
-    .title-btn {
+    .btn {
+        display: flex;
         justify-content: center;
         padding-top: 93px;
         padding-bottom: 34px;
-        display: flex;
     padding-left: 0;
     margin-top: 0;
     margin-bottom: 0;
     }
     
-    .title-btn .btn-btn + .btn-btn {
+    .btn .btn__item + .btn__item {
         margin-left: 8px;
     }
-    .btn {
+    .btn__title {
         display: inline-block;
         border-radius: 4px;
         padding: 6px 22px;
@@ -498,13 +452,16 @@
         text-align: center;
     
         transition: background-color $animation,
-        color 250ms $animation;
+        color $animation,
+        box-shadow $animation;
     }
     
-    .btn:hover,
-    .btn:focus {
+    .btn__title:hover,
+    .btn__title:focus {
         color: $hero-100pr; 
         background-color: $akcent-color;
+        box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+    outline-style: none;
     }
     
     /* portfolio */
@@ -517,10 +474,12 @@
         padding-bottom: 94px;
         padding-left: 15px;
         width: 1200px;
-    
+    }
+    .card__grid {
+        border: solid #EEEEEE;
     }
     
-    .card-contents .title {
+    .card-contents__title {
         margin-top: 0;
         margin-bottom: 4px;
         width: 322px;
@@ -531,50 +490,39 @@
         line-height: 2;
         letter-spacing: 0.06em;
     }
-    .card-set {
+    .card {
         display: flex;
         flex-wrap: wrap;
         padding-left: 0;
-        margin-top: calc(-1 * $card-grid);
+        margin-top: calc(-1 * 30px);
         margin-bottom: 0;
-        margin-left: calc(-1 * $card-grid);
+        margin-left: calc(-1.5 * 30px);
     }
-    .card-set .grid {
-        flex-basis: calc(100% / 3 - $card-grid);
-        margin-top: $card-grid;
-        margin-left: $card-grid;
-        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
-    border-radius: 0px 0px 4px 4px;
+    .card__grid{
+        flex-basis: calc(100% / 3 - 30px);
+        margin-top: 30px;
+        margin-left: 30px;
+        background-color: $hero-100pr;
+        
+        @include transition (box-shadow);
     }
     
+    .card__grid:hover {
+        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+        border-radius: 0px 0px 4px 4px;
+    }
     .card-contents {
         padding: 20px 24px;
     }
      
-    .caption .title {
-        margin-top: 20px;
-    
-        color: $title-text-color; 
-        font-size: 18px; line-height: 2;
-        letter-spacing: 0.06em;
-    }
-    
-    .caption .list {
-        margin-top: 0;
-        margin-bottom: 20px;
-    
-        font-weight: 400; 
-        font-size: 16px; 
-        line-height: 1.87;
-    }
-    
+   
     /* overlay-portfolio */
-    .card-thumb {
+    .card__thumb {
         position: relative;
         overflow: hidden;
     }
     
-    .card-overlay {
+    .card__overlay {
         position: absolute;
        
         top: 0;
@@ -583,23 +531,16 @@
         height: 100%;
         padding: 63px 24px;  
     background-color: $card-bg-color;
-    
-    /* opacity: 0;
-    transition: opacity $animation; */
-    
+
     transform: translateY(100%);
     @include transition(transform);
-    
+
     }
-    
-    .card:hover .card-overlay {
-        transform: translateX(0);
+   
+    .card__set:hover .card__overlay {
+        transform: translateX(0); 
     }
-    /* .card:hover .card-thumb::before {
-        opacity: 1;
-    } */
-    
-    .card-text {
+    .card__text {
         position: absolute;
         width: 322px;
         height: 168px;
@@ -618,8 +559,8 @@
     @include transition(opacity);
     }
     
-    .card:hover .card-text,
-    .card:focus .card-text {
+    .card__set:hover .card__text,
+    .card__set:focus .card__text {
         opacity: 1;
     }
     
@@ -647,6 +588,9 @@
     .backdrop__sign.is-hidden .modal {
         transform: translate(-50%, -50%) scale(1.3);
     }
+    
+    
+    /* оформлення модального вікна */
     .modal {
         position: absolute;
         top: 50%;
@@ -662,7 +606,6 @@
         border-radius: 4px;
       
     }
-
     .modal__icon {
         position: absolute;
         top: 8px;
@@ -680,8 +623,6 @@
      .modal__icon:hover {
         fill: $akcent-color;
     }
-    
-    /* оформлення модального вікна */
     .modal__title {
         margin-top: 0;
         margin-bottom: 12px;
@@ -773,13 +714,13 @@
     
         /* checkbox */
     
-        .checkbox-wrapper {
+        .checkbox {
            margin: 0 11px 30px 12px;
             
             /* text-align: center; */
         }
     
-        .checkbox-wrapper .checkbox-lable {
+        .checkbox__lable {
         display: flex;
     
         align-items: center;
@@ -789,26 +730,26 @@
         cursor: pointer;
     }
     
-    .checkbox-lable .link {
+     .checkbox__link {
         color: $akcent-color;
         text-decoration-line: underline;
         @include transition(color);
         
     }
      
-    .checkbox-lable:focus .link,
-    .checkbox-lable:hover .link {
+    .checkbox__lable:focus .link,
+    .checkbox__lable:hover .checkbox__link {
     color: $modal-bg-btn;
     }
     
-    .checkbox {
+    .checkbox__input {
        appearance: none;
        -moz-appearance: none;
        -webkit-appearance: none;
        position: absolute;
     }
     
-    .chackbox-icon {
+    .chackbox__icon {
         margin-right: 7px;
         border: 2px solid $logo-tekst;
         border-radius: 3px;
@@ -817,18 +758,15 @@
         @include transition(background-color);
     }
     
-    .checkbox:focus + .chackbox-icon {
     
-    }
-    
-    .checkbox:checked + .chackbox-icon {
+    .checkbox__input:checked + .chackbox__icon {
         border: none;
         background-color: $akcent-color;
         fill: $hero-100pr;
         opacity: 1;
     }
     
-     .check-btn {
+     .checkbox__btn {
          display: flex;
     
          min-width: 200px;
@@ -851,7 +789,7 @@
          @include transition(background-color);
      }
     
-     .signup-form:focus .check-btn,
-     .signup-form:hover .check-btn {
+     .signup-form:focus .checkbox__btn,
+     .signup-form:hover .checkbox__btn {
          background-color: $modal-bg-btn; 
         }

@@ -578,13 +578,13 @@ img {
   margin-left: 10px;
 }
 
-.social__element {
+.social__icons {
   fill: #afb1b8;
   -webkit-transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.social__item:hover .social__element {
+.social__item:hover .social__icons {
   fill: #FFFFFF;
 }
 
@@ -593,35 +593,29 @@ img {
   background-color: #2196F3;
 }
 
-.icon-s.footer-li {
+.social--dark {
   background-color: rgba(255, 255, 255, 0.1);
   fill: #FFFFFF;
 }
 
-.leter-f {
+.social--lighter {
   fill: #FFFFFF;
 }
 
-/* .team__list .link {
-        margin-bottom: 30px;
-    } */
-/* .team__list .team__persons + .team__persons {
-    margin-left: 30px;
-    } */
 /* Постоянные клиенты */
 .section__client {
   padding-bottom: 97px;
 }
 
 .client__title {
-  padding: 0;
-  margin: 50px auto 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  padding: 0;
+  margin: 50px auto 0;
   color: #afb1b8;
 }
 
@@ -630,10 +624,6 @@ img {
 }
 
 .client__wraper {
-  width: 170px;
-  height: 90px;
-  border: 1px solid currentColor;
-  border-radius: 4px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -643,6 +633,10 @@ img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 170px;
+  height: 90px;
+  border: 1px solid currentColor;
+  border-radius: 4px;
   -webkit-transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -681,19 +675,17 @@ img {
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.footer__address:hover .address__link,
-.footer__address:focus .address__link {
+.address__item:hover .address__link,
+.address__item:focus .address__link {
   color: #FFFFFF;
 }
 
-.footer__address {
+.address {
   display: block;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   padding-left: 0;
   margin-top: 20px;
   width: 231px;
-  font-family: inherit;
+  font-style: normal;
   font-weight: normal;
   font-size: 14px;
   line-height: 1.71;
@@ -707,11 +699,17 @@ img {
 }
 
 .footer__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
   padding-top: 60px;
   padding-bottom: 60px;
 }
 
-.footer-title {
+.footer-social__title {
   display: block;
   font-style: normal;
   font-weight: 700;
@@ -723,7 +721,7 @@ img {
   text-transform: uppercase;
 }
 
-.footer-icons {
+.footer-social {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -737,15 +735,6 @@ img {
   padding-bottom: 0;
   width: 206px;
   margin: 12px 93px 40px 70px;
-}
-
-.foot-div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: baseline;
-      -ms-flex-align: baseline;
-          align-items: baseline;
 }
 
 /* footer e-mail */
@@ -766,13 +755,7 @@ img {
   text-transform: uppercase;
 }
 
-.sign-form {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.email-footer {
+.footer-form__email {
   width: 358px;
   outline: none;
   margin: 0;
@@ -793,40 +776,12 @@ img {
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.email-footer:focus,
-.email-footer:hover {
+.footer-form__email:focus,
+.footer-form__email:hover {
   border-color: #188ce8;
 }
 
-.leter-btn {
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  right: 28px;
-  /* padding-left: 10px; */
-  fill: #FFFFFF;
-}
-
-/* button */
-.button {
-  border-radius: 4px;
-  padding: 10px 32px;
-  border: 1px solid transparent;
-  color: #FFFFFF;
-  background-color: #2196F3;
-  font-family: inherit;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 1.87;
-  letter-spacing: 0.06em;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  cursor: pointer;
-}
-
-.button-footer {
+.footer-form__button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -857,9 +812,36 @@ img {
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.button-footer:focus,
-.button-footer:hover {
+.footer-form__button:focus,
+.footer-form__button:hover {
   background-color: #188ce8;
+}
+
+.footer-form__icon {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  right: 28px;
+  fill: #FFFFFF;
+}
+
+/* button */
+.button {
+  border-radius: 4px;
+  padding: 10px 32px;
+  border: 1px solid transparent;
+  color: #FFFFFF;
+  background-color: #2196F3;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
 }
 
 .title-btn {
@@ -1024,7 +1006,7 @@ img {
 }
 
 /* backdrop-hero */
-.backdrop-sign {
+.backdrop__sign {
   position: fixed;
   top: 0;
   left: 0;
@@ -1036,18 +1018,18 @@ img {
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.backdrop-sign.is-hidden {
+.backdrop__sign.is-hidden {
   opacity: 0;
   pointer-events: none;
   visibility: visible;
 }
 
-.backdrop-sign.is-hidden .modal-sign {
+.backdrop__sign.is-hidden .modal {
   -webkit-transform: translate(-50%, -50%) scale(1.3);
           transform: translate(-50%, -50%) scale(1.3);
 }
 
-.modal-sign {
+.modal {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1062,7 +1044,7 @@ img {
   border-radius: 4px;
 }
 
-.modal-colose {
+.modal__icon {
   position: absolute;
   top: 8px;
   right: 8px;
@@ -1076,13 +1058,13 @@ img {
   background-color: inherit;
 }
 
-.modal-colose:focus,
-.modal-colose:hover {
+.modal__icon:focus,
+.modal__icon:hover {
   fill: #2196F3;
 }
 
 /* оформлення модального вікна */
-.modal-title {
+.modal__title {
   margin-top: 0;
   margin-bottom: 12px;
   font-weight: 700;
@@ -1092,7 +1074,7 @@ img {
   color: #212121;
 }
 
-.signup-form .group {
+.signup-form__group {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1103,7 +1085,7 @@ img {
   margin-bottom: 10px;
 }
 
-.signup-form .form-lable {
+.signup-form__lable {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1119,7 +1101,7 @@ img {
   cursor: pointer;
 }
 
-.signup-form .form-input {
+.signup-form__input {
   width: 100%;
   font-family: inherit;
   margin: 0;
@@ -1135,8 +1117,8 @@ img {
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.signup-form .form-input:focus,
-.signup-form .form-input:hover {
+.signup-form__input:focus,
+.signup-form__input:hover {
   border-color: #2196F3;
 }
 
@@ -1144,7 +1126,7 @@ img {
   position: relative;
 }
 
-.signup-form .icon {
+.signup-form__icon {
   position: absolute;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -1155,8 +1137,8 @@ img {
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.signup-form .form-input:focus + .icon,
-.signup-form .form-input:hover + .icon {
+.signup-form__input:focus + .signup-form__icon,
+.signup-form__input:hover + .signup-form__icon {
   fill: #2196F3;
 }
 
@@ -1170,28 +1152,28 @@ img {
 /* .form-input:focus ~ .icon {
            fill: $akcent-color;
        } */
-.textarea-wrapper .form-input.comment {
+.signup-form--comment {
   padding: 12px 16px;
   margin-bottom: 20px;
 }
 
-.textarea-wrapper .comment:hover::-webkit-input-placeholder,
-.textarea-wrapper .comment:focus::-webkit-input-placeholder {
+.signup-form--comment:hover::-webkit-input-placeholder,
+.signup-form--comment:focus::-webkit-input-placeholder {
   color: #2196F3;
 }
 
-.textarea-wrapper .comment:hover:-ms-input-placeholder,
-.textarea-wrapper .comment:focus:-ms-input-placeholder {
+.signup-form--comment:hover:-ms-input-placeholder,
+.signup-form--comment:focus:-ms-input-placeholder {
   color: #2196F3;
 }
 
-.textarea-wrapper .comment:hover::-ms-input-placeholder,
-.textarea-wrapper .comment:focus::-ms-input-placeholder {
+.signup-form--comment:hover::-ms-input-placeholder,
+.signup-form--comment:focus::-ms-input-placeholder {
   color: #2196F3;
 }
 
-.textarea-wrapper .comment:hover::placeholder,
-.textarea-wrapper .comment:focus::placeholder {
+.signup-form--comment:hover::placeholder,
+.signup-form--comment:focus::placeholder {
   color: #2196F3;
 }
 

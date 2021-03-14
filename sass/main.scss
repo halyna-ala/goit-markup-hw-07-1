@@ -231,12 +231,12 @@
         margin-left: 10px;
     }
     
-    .social__element {
+    .social__icons {
         fill: $social-icons;
         @include transition(color);
 
     }
-    .social__item:hover .social__element{
+    .social__item:hover .social__icons{
         fill: $hero-100pr;
     }
     
@@ -244,20 +244,14 @@
     .social__icons .social__item:focus {
         background-color: $akcent-color;
     }
-    .icon-s.footer-li {
+    .social--dark {
         background-color: $white-text-color-1;
         fill: $hero-100pr;
     }
-    .leter-f {
+    .social--lighter {
         fill: $hero-100pr;
     }
-    /* .team__list .link {
-        margin-bottom: 30px;
-    } */
-    
-    /* .team__list .team__persons + .team__persons {
-    margin-left: 30px;
-    } */
+   
     
     /* Постоянные клиенты */
     
@@ -266,25 +260,30 @@
     }
     
     .client__title {
-     padding: 0;
-      margin: 50px auto 0;
-      display: flex;
-      justify-content: space-between;
-      color: $social-icons;
+        display: flex;
+        justify-content: space-between;
+     
+        padding: 0;
+      
+        margin: 50px auto 0;
+       color: $social-icons;
     }
     
     .client__link {
         color: $social-icons;
-    
-    }
+     }
+
     .client__wraper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
         width: 170px;
       height: 90px;
+
       border: 1px solid currentColor;
       border-radius: 4px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+
       @include transition(color);
       
     }
@@ -321,17 +320,17 @@
         @include transition(color);
     }
     
-    .footer__address:hover .address__link,
-    .footer__address:focus .address__link {
+    .address__item:hover .address__link,
+    .address__item:focus .address__link {
         color: $hero-100pr;
     }
-    .footer__address {
+    .address {
         display: block;
-        flex-wrap: wrap;
+        
         padding-left: 0;
         margin-top: 20px;
         width: 231px;
-        font-family: inherit;
+    font-style: normal;
         font-weight: normal; 
         font-size: 14px; 
         line-height: 1.71;
@@ -342,10 +341,12 @@
         margin-top: 9px;
     }
     .footer__container {
+        display: flex;
+        align-items: baseline;
         padding-top: 60px;
         padding-bottom: 60px;
     }
-    .footer-title {
+    .footer-social__title {
         display: block;
         font-style: normal;
       font-weight: 700;
@@ -358,7 +359,7 @@
     text-transform: uppercase;
     }
     
-    .footer-icons {
+    .footer-social {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -368,10 +369,6 @@
       margin: 12px 93px 40px 70px;
     }
     
-    .foot-div {
-        display: flex;
-        align-items: baseline;
-    }
     
     /* footer e-mail */
     .footer-form {
@@ -389,10 +386,8 @@
        text-transform: uppercase;
     }
     
-     .sign-form {
-         display: flex;
-     }
-    .email-footer {
+     
+    .footer-form__email {
     width: 358px;
     
     outline: none;
@@ -412,39 +407,13 @@
     @include transition(border-color);    
     }
      
-    .email-footer:focus,
-    .email-footer:hover {
+    .footer-form__email:focus,
+    .footer-form__email:hover {
         border-color: $modal-bg-btn;
     }
     
-    .leter-btn {
-        @include vertically-centered;
-
-    right: 28px;
-
-    /* padding-left: 10px; */
     
-    fill: $hero-100pr;
-    }
-    /* button */
-    .button {
-        border-radius: 4px;
-        padding: 10px 32px;
-        border: 1px solid transparent;
-    
-        color: $hero-100pr; 
-        background-color: $akcent-color; 
-        
-        font-family: inherit; 
-        font-weight: 700; 
-        font-size: 16px; 
-        line-height: 1.87; 
-        letter-spacing: 0.06em;
-        align-items: center;
-        cursor: pointer;
-    }
-    
-    .button-footer {
+    .footer-form__button {
         display: flex;
         width: 200px;
         height: 50px;
@@ -469,12 +438,36 @@
     box-shadow: $shadow-button;
     cursor: pointer;
     @include transition(background-color);
-
-    }
     
-    .button-footer:focus,
-    .button-footer:hover {
+}
+
+    .footer-form__button:focus,
+    .footer-form__button:hover {
         background-color: $modal-bg-btn 
+    }
+    .footer-form__icon {
+        @include vertically-centered;
+    
+    right: 28px;
+    
+    fill: $hero-100pr;
+    }
+    /* button */
+    .button {
+        border-radius: 4px;
+        padding: 10px 32px;
+        border: 1px solid transparent;
+    
+        color: $hero-100pr; 
+        background-color: $akcent-color; 
+        
+        font-family: inherit; 
+        font-weight: 700; 
+        font-size: 16px; 
+        line-height: 1.87; 
+        letter-spacing: 0.06em;
+        align-items: center;
+        cursor: pointer;
     }
     .title-btn {
         justify-content: center;
@@ -631,7 +624,7 @@
     }
     
     /* backdrop-hero */
-    .backdrop-sign {
+    .backdrop__sign {
         position: fixed;
         top: 0;
         left: 0;
@@ -645,16 +638,16 @@
         @include transition(opacity);
         
     }
-    .backdrop-sign.is-hidden {
+    .backdrop__sign.is-hidden {
         opacity: 0;
         pointer-events: none;
         visibility: visible;
     }
     
-    .backdrop-sign.is-hidden .modal-sign {
+    .backdrop__sign.is-hidden .modal {
         transform: translate(-50%, -50%) scale(1.3);
     }
-    .modal-sign {
+    .modal {
         position: absolute;
         top: 50%;
         left: 50%;
@@ -669,7 +662,8 @@
         border-radius: 4px;
       
     }
-    .modal-colose {
+
+    .modal__icon {
         position: absolute;
         top: 8px;
         right: 8px;
@@ -682,13 +676,13 @@
       background-color: inherit;
     }
     
-     .modal-colose:focus, 
-     .modal-colose:hover {
+     .modal__icon:focus, 
+     .modal__icon:hover {
         fill: $akcent-color;
     }
     
     /* оформлення модального вікна */
-    .modal-title {
+    .modal__title {
         margin-top: 0;
         margin-bottom: 12px;
         font-weight: 700;
@@ -698,13 +692,13 @@
         color: $title-text-color;
     }
     
-    .signup-form .group {
+    .signup-form__group {
             display: flex;
             flex-direction: column;
             margin-bottom: 10px;
         }
     
-    .signup-form .form-lable {
+    .signup-form__lable {
         display: flex;
             flex-direction: column;
     
@@ -716,7 +710,7 @@
         cursor: pointer; 
     }
     
-    .signup-form .form-input {
+    .signup-form__input {
         width: 100%;
         font-family: inherit;
         margin: 0;
@@ -734,8 +728,8 @@
         
     }
     
-    .signup-form .form-input:focus, 
-    .signup-form .form-input:hover {
+    .signup-form__input:focus, 
+    .signup-form__input:hover {
     border-color:  $akcent-color
     }
     
@@ -743,7 +737,7 @@
            position: relative;
        }
     
-       .signup-form .icon {
+       .signup-form__icon {
            @include vertically-centered;
            left: 12px;
 
@@ -751,8 +745,8 @@
         @include transition(fill);
     }
     
-    .signup-form .form-input:focus + .icon, 
-    .signup-form .form-input:hover + .icon {
+    .signup-form__input:focus + .signup-form__icon, 
+    .signup-form__input:hover + .signup-form__icon{
         fill: $akcent-color;
     }
     /* .input-wrapper .form-input:focus + .icon {
@@ -767,13 +761,13 @@
            fill: $akcent-color;
        } */
     
-        .textarea-wrapper .form-input.comment {
+       .signup-form--comment {
         padding: 12px 16px;
         margin-bottom: 20px;
         }
     
-        .textarea-wrapper .comment:hover::placeholder,
-        .textarea-wrapper .comment:focus::placeholder {
+        .signup-form--comment:hover::placeholder,
+        .signup-form--comment:focus::placeholder {
             color: $akcent-color;
         }
     
